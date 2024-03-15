@@ -1,0 +1,7 @@
+First_Name	Last_Name			Email			        	Courses_Name	  			Link
+Reema		   Nasr		reema.nasr@e.braude.ac.il		         computing		     www.ynet.co.il	
+Samira		 Dabbah		samira.dabbah@e.braude.ac.il	         computing		https://www.instagram.com/
+Randa  		 Assadi          Randa.assadi@e.braude.ac.il                     computing               https://www.google.co.uk/
+Shorok              Heib              Shorok.heeb@e.braude.ac.il                       computing             https://www.threads.net/login
+Marysoul         karawany       Marysoul.Karawany@e.braude.ac.il             computing               https://github.com/
+Saeed              Ismael               saeed.ismael@e.braude.ac.il                   computing              https://www.linkedin.com/in/saeed-ismael-291a1a220/
