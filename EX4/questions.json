@@ -1,0 +1,57 @@
+[
+    {
+        "number": 1,
+        "content": "What is the output of the following Python code snippet? x = 5 y = 2 z = x * y print(z)",
+        "answers": {
+            "1": "10",
+            "2": "7",
+            "3": "25",
+            "4": "52"
+        },
+        "correctAnswer": "1"
+    },
+    {
+        "number": 2,
+        "content": "Which of the following statements is true about Python lists?",
+        "answers": {
+            "1": "Lists are immutable",
+            "2": "Lists can contain items of different data types",
+            "3": "Lists are implemented as arrays in Python",
+            "4": "Lists cannot be nested"
+        },
+        "correctAnswer": "2"
+    },
+    {
+        "number": 3,
+        "content": "What does the range() function in Python return?",
+        "answers": {
+            "1": "A list of numbers.",
+            "2": "A generator object that yields numbers.",
+            "3": "A tuple containing numbers.",
+            "4": "A dictionary with numbers as keys."
+        },
+        "correctAnswer": "2"
+    },
+    {
+        "number": 4,
+        "content": "Which of the following Python code snippets correctly opens a file named \"example.txt\" in read mode?",
+        "answers": {
+            "1": "file = open(\"example.txt\", \"w\")",
+            "2": "file = open(\"example.txt\", \"a\")",
+            "3": "file = open(\"example.txt\", \"r\")",
+            "4": "file = open(\"example.txt\", \"x\")"
+        },
+        "correctAnswer": "3"
+    },
+    {
+        "number": 5,
+        "content": "What does the 'len()' function in Python do?",
+        "answers": {
+            "1": "Returns the length of an object",
+            "2": "Deletes an element from a list",
+            "3": "Converts an integer to a string",
+            "4": "Prints all elements in an object"
+        },
+        "correctAnswer": "1"
+    }
+]
