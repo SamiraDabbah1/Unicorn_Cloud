@@ -1,0 +1,50 @@
+[
+  {
+      "First Name": "Saeed",
+      "Last Name": "Ismael",
+      "Email": "saeed.ismael@braude.ac.il",
+      "Courses": ["Introduction to Cloud Computing", "Computer Architecture", "Introduction to Project Management"],
+      "Interesting Link": "https://www.linkedin.com/in/saeed-ismael-291a1a220/",
+      "Favorite Program": "Introduction to Cloud Computing"
+  },
+  {
+      "First Name": "Shorok",
+      "Last Name": "Heeb",
+      "Email": "Shorok.Heeb@braude.ac.il",
+      "Courses": ["Computer Architecture", "Web Development"],
+      "Interesting Link": "https://www.youtube.com/",
+      "Favorite Program": "Computer Architecture"
+  },
+  {
+      "First Name": "Samira",
+      "Last Name": "Dabbah",
+      "Email": "samira.dabbah@braude.ac.il",
+      "Courses": ["Web Development", "Data Mining", "Operating Systems"],
+      "Interesting Link": "https://www.netflix.com/browse",
+      "Favorite Program": "Operating Systems"
+  },
+  {
+      "First Name": "Marysoul",
+      "Last Name": "Karawany",
+      "Email": "Marysoul.Karawany@braude.ac.il",
+      "Courses": ["Operating Systems", "Capstone Project A"],
+      "Interesting Link": "https://www.facebook.com",
+      "Favorite Program": "Operating Systems"
+  },
+  {
+      "First Name": "Reema",
+      "Last Name": "Nasr",
+      "Email": "Reema.nasr@braude.ac.il",
+      "Courses": ["Web Development", "Data Mining", "Operating Systems"],
+      "Interesting Link": "https://w3.braude.ac.il/",
+      "Favorite Program": "Operating Systems"
+  }
+  {
+      "First Name": "Randa",
+      "Last Name": "Assadi",
+      "Email": "Randa.Assadi@braude.ac.il",
+      "Courses": ["Web Development", "Data Mining", "Operating Systems"],
+      "Interesting Link": "https://w3.braude.ac.il/",
+      "Favorite Program": "Data Mining"
+  }
+]
