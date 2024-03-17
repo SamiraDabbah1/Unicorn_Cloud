@@ -1,0 +1,90 @@
+import requests
+from bs4 import BeautifulSoup
+import matplotlib.pyplot as plt
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+from google.colab import drive
+
+drive.mount('/content/drive')
+file_path = '/content/drive/My Drive/firebase_key.json'
+
+cred = credentials.Certificate(file_path)
+
+if not firebase_admin._apps:
+    firebase_admin.initialize_app(cred)
+
+db = firestore.client()
+
+words_to_index = [
+    "cloud computing", "machine learning", "robotics", "algorithms", 
+    "cybersecurity", "data", "computer", 
+    "natural language processing", "quantum computing", "blockchain"
+]
+
+def scrape_website(url):
+    try:
+        page = requests.get(url, timeout=5)
+        soup = BeautifulSoup(page.content, 'html.parser')
+        text = soup.get_text()
+        return text
+    except requests.exceptions.RequestException as e:
+        print(f"Error occurred while fetching the URL {url}: {str(e)}")
+        return ""
+
+def index_words(url):
+    text = scrape_website(url).lower()
+    index = {word.lower(): {'count': text.count(word.lower()), 'url': url} for word in words_to_index}
+    return index
+
+def save_to_firebase(index_data):
+    for word, data in index_data.items():
+        doc_ref = db.collection(u'words').document(word)
+        doc_ref.set(data)
+
+def search(query):
+    query_words = query.lower().split()
+    results = {}
+    for word in query_words:
+        doc_ref = db.collection(u'words').document(word)
+        doc = doc_ref.get()
+        if doc.exists:
+            results[word] = doc.to_dict()
+    return results
+
+def search_engine(url, query):
+    index_data = index_words(url)
+    save_to_firebase(index_data)
+    results = search(query)
+    print(results)
+
+def retrieve_from_firebase():
+    words_data = {}
+    docs = db.collection(u'words').stream()
+    
+    for doc in docs:
+        word = doc.id
+        data = doc.to_dict()
+        if 'count' in data and 'url' in data:
+            words_data[word] = {'count': data['count'], 'url': data['url']}
+        else:
+            print(f"Missing data for word: {word}")
+    
+    return words_data
+
+def plot_frequency(words_data):
+    counts = {word: data['count'] for word, data in words_data.items()}
+    plt.bar(counts.keys(), counts.values())
+    plt.xlabel('Words')
+    plt.ylabel('Frequency')
+    plt.title('Word Frequency Chart')
+    plt.show()
+
+def main():
+    query = " ".join(words_to_index)
+    search_engine('https://www.digitalocean.com/', query)
+    words_data = retrieve_from_firebase()
+    plot_frequency(words_data)
+
+if __name__ == "__main__":
+    main()
